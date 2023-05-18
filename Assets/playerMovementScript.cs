@@ -21,12 +21,12 @@ public class playerMovementScript : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, jumpForce));
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             //rb.velocity = new Vector2(-5f, rb.velocity.y);
             transform.position = transform.position + new Vector3(-speed, 0, 0);
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             //rb.velocity = new Vector2(5f, rb.velocity.y);
             transform.position = transform.position + new Vector3(speed, 0, 0);
