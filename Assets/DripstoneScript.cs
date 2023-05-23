@@ -10,6 +10,7 @@ public class DripstoneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0.5f * difLevel;
         gm = GameObject.Find("GMObject").GetComponent<gameManagerScript>();
         SetGravSpeed();
@@ -47,6 +48,14 @@ public class DripstoneScript : MonoBehaviour
         else
         {
             rb.gravityScale = 2;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            Destroy(this.gameObject);
         }
     }
 

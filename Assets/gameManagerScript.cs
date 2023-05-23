@@ -8,14 +8,12 @@ public class gameManagerScript : MonoBehaviour
     public GameObject dripstone;
     public float spawnSpeed = 5;
     public bool gameOver;
-    Rigidbody2D rb;
 
     public float gameTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(checkSpawnSpeed());
     }
 
@@ -42,7 +40,6 @@ public class gameManagerScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         StartCoroutine(checkSpawnSpeed());
     }
-
 
 
 }
